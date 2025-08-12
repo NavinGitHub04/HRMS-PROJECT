@@ -92,6 +92,18 @@ export default function Header() {
                         Job
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink
+                        to="/OrgUnit"
+                        className={({ isActive }) =>
+                            `hover:lg:hover:bg-transparent 
+                             ${isActive ? "text-orange-700 " : "text-gray-600"}
+                             lg:border-0 hover:text-orange-700 lg:p-0`
+                        }
+                    >
+                        OrgUnit
+                    </NavLink>
+                </li>
             </ul>
         </div>
     );

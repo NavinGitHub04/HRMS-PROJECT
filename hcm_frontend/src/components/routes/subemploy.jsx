@@ -301,7 +301,7 @@ function SubEmploy() {
 
   return (
     <>
-      <div style={{ margin: '20px' }}>
+      <div className='m-4'>
         <h3>{editSubEmployId ? 'Edit SubEmploy' : 'Add New SubEmploy'}</h3>
 
         <input
@@ -311,7 +311,10 @@ function SubEmploy() {
           value={newSubEmploy.PK_SubCatID}
           onChange={handleInputChange}
           disabled={!!editSubEmployId}
-          style={{ marginRight: '10px' }}
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
 
         <input
@@ -320,7 +323,10 @@ function SubEmploy() {
           placeholder="SubEmploy Name"
           value={newSubEmploy.Name}
           onChange={handleInputChange}
-          style={{ marginRight: '10px' }}
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
 
         <input
@@ -329,15 +335,17 @@ function SubEmploy() {
           placeholder="Employee Category ID"
           value={newSubEmploy.FK_HR_EmpCatID}
           onChange={handleInputChange}
-          style={{ marginRight: '10px' }}
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
 
         {editSubEmployId ? (
           <>
             <button
               onClick={updateSubEmploy}
-              className="bg-slate-500 hover:bg-slate-400 text-white font-semibold pr-2 py-2 px-2 rounded shadow-md"
-              style={{ marginRight: '10px' }}
+              className="mr-2 bg-slate-500 hover:bg-slate-400 text-white font-semibold pr-2 py-2 px-2 rounded shadow-md"
             >
               Update SubEmploy
             </button>

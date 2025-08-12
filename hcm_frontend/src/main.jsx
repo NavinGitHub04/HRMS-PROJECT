@@ -1,19 +1,20 @@
 import { StrictMode } from 'react';
-import  './index.css';
+import './index.css';
 import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'; 
-import App from './App.jsx';                      
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import App from './App.jsx';
 import Componey from './components/routes/componey.jsx';
 import Department from './components/routes/department.jsx';
 import Division from './components/routes/division.jsx';
-import SubDivision from './components/routes/subdivision.jsx'; 
+import SubDivision from './components/routes/subdivision.jsx';
 import Employ from './components/routes/employ.jsx';
-import SubEmploy from './components/routes/subemploy.jsx'; 
+import SubEmploy from './components/routes/subemploy.jsx';
 import Job from './components/routes/job.jsx';
+import OrgUnit from './components/routes/0rgUnit.jsx'; // Fixed import path for OrgUnit component
 const router = createBrowserRouter([
   {
     path: '/',
-    element:<App/>, 
+    element: <App />,
     children: [
       {
         path: 'componey',
@@ -25,24 +26,28 @@ const router = createBrowserRouter([
       },
       {
         path: 'division',
-        element: <Division/>,
+        element: <Division />,
       },
       {
         path: 'subDivision',
-        element: <SubDivision/>,
+        element: <SubDivision />,
       },
       {
         path: 'Employ',
-        element: <Employ/>,
+        element: <Employ />,
       },
-        {
+      {
         path: 'subEmploy',
-        element: <SubEmploy/>,
+        element: <SubEmploy />,
       },
       {
         path: 'job',
-        element: <Job/>,
+        element: <Job />,
       },
+      {
+        path: 'OrgUnit',
+        element: <OrgUnit />,
+      }
     ],
   },
 ]);

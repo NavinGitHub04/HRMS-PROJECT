@@ -70,7 +70,7 @@ function Department() {
         code: newDepartment.code,
         deptId: newDepartment.deptId,
       });
-      setNewDepartment({ id: '', name: '', code: '', deptId: ''});
+      setNewDepartment({ id: '', name: '', code: '', deptId: '' });
       fetchDepartment();
     } catch (error) {
       console.error('Error adding Department:', error.response?.data || error.message);
@@ -88,7 +88,7 @@ function Department() {
         name: newDepartment.name,
         code: newDepartment.code,
       });
-      setNewDepartment({ id: '', name: '', code: '', deptId: ''});
+      setNewDepartment({ id: '', name: '', code: '', deptId: '' });
       setEditDepartmentId(null);
       fetchDepartment();
     } catch (error) {
@@ -101,7 +101,7 @@ function Department() {
 
   return (
     <>
-      <div style={{ margin: '20px' }}>
+      <div className='m-4'>
         <h3>{editDepartmentId ? 'Edit Department' : 'Add New Department'}</h3>
         <input
           type="text"
@@ -110,7 +110,9 @@ function Department() {
           value={newDepartment.id}
           onChange={handleInputChange}
           disabled={!!editDepartmentId}
-          style={{ marginRight: '10px' }}
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
         <input
           type="text"
@@ -118,7 +120,9 @@ function Department() {
           placeholder="Enter Department Name"
           value={newDepartment.name}
           onChange={handleInputChange}
-          style={{ marginRight: '10px' }}
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
         <input
           type="text"
@@ -126,7 +130,9 @@ function Department() {
           placeholder="Enter Code"
           value={newDepartment.code}
           onChange={handleInputChange}
-          style={{ marginRight: '10px' }}
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
         <input
           type="text"
@@ -134,12 +140,14 @@ function Department() {
           placeholder="Enter Parent DeptId"
           value={newDepartment.deptId}
           onChange={handleInputChange}
-          style={{ marginRight: '10px' }}
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
         {editDepartmentId ? (
           <>
-            <button onClick={updateDepartment} style={{ marginRight: '10px' }}
-              className='bg-slate-500 hover:bg-slate-400 text-white font-semibold 
+            <button onClick={updateDepartment}
+              className='mr-2 bg-slate-500 hover:bg-slate-400 text-white font-semibold 
               pr-2 py-2 px-2 rounded shadow-md'>
               Update Department
             </button>

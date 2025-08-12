@@ -107,7 +107,10 @@ function Employ() {
           value={newEmploy.id}
           onChange={handleInputChange}
           disabled={!!editEmployId}
-          style={{ marginRight: '10px' }}
+          // className="mr-10 pl-2 bg-transparent  rounded-lg  border-0 focus:outline-none focus:border-0 border-r-4"
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
         <input
           type="text"
@@ -115,7 +118,9 @@ function Employ() {
           placeholder="Enter Employ Name"
           value={newEmploy.name}
           onChange={handleInputChange}
-          style={{ marginRight: '10px' }}
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
         <input
           type="text"
@@ -123,7 +128,9 @@ function Employ() {
           placeholder="Enter Code"
           value={newEmploy.code}
           onChange={handleInputChange}
-          style={{ marginRight: '10px' }}
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
         {editEmployId ? (
           <>

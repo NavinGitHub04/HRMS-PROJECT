@@ -96,7 +96,7 @@ function SubDivision() {
 
   return (
     <>
-      <div style={{ margin: '20px' }}>
+      <div className='m-4'>
         <h3>{editSubDivisionId ? 'Edit SubDivision' : 'Add New SubDivision'}</h3>
 
         <input
@@ -106,7 +106,9 @@ function SubDivision() {
           value={newSubDivision.PK_SubDivID}
           onChange={handleInputChange}
           disabled={!!editSubDivisionId}
-          style={{ marginRight: '10px' }}
+          className='pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
 
         <input
@@ -115,7 +117,9 @@ function SubDivision() {
           placeholder="SubDivision Name"
           value={newSubDivision.Name}
           onChange={handleInputChange}
-          style={{ marginRight: '10px' }}
+          className='pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
 
         <input
@@ -124,15 +128,16 @@ function SubDivision() {
           placeholder="Division ID"
           value={newSubDivision.FK_HR_DivisionID}
           onChange={handleInputChange}
-          style={{ marginRight: '10px' }}
+          className='pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
 
         {editSubDivisionId ? (
           <>
             <button
               onClick={updateSubDivision}
-              className="bg-slate-500 hover:bg-slate-400 text-white font-semibold pr-2 py-2 px-2 rounded shadow-md"
-              style={{ marginRight: '10px' }}
+              className="mr-2 bg-slate-500 hover:bg-slate-400 text-white font-semibold pr-2 py-2 px-2 rounded shadow-md"
             >
               Update SubDivision
             </button>
@@ -157,7 +162,7 @@ function SubDivision() {
       </div>
 
       <table border="1" cellPadding="10" style={{ borderCollapse: 'collapse', width: '100%' }}>
-        <thead style={{ textAlign: 'left' }}>
+        <thead className='text-left'>
           <tr>
             <th colSpan="5">subDivision List: {product.length}</th>
           </tr>

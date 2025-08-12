@@ -43,7 +43,6 @@ function Job() {
     };
 
     const handleInputChange = (e) => {
-        // const { name, value } = e.target.value;
         setNewJob({
             ...newJob,
             [e.target.name]: e.target.value,
@@ -105,7 +104,7 @@ function Job() {
 
     return (
         <>
-            <div style={{ margin: '20px' }}>
+            <div className='m-4'>
                 <h3>{editJobPK_JobID ? 'Edit Job' : 'Add New Job'}</h3>
                 <input
                     type="text"
@@ -114,7 +113,9 @@ function Job() {
                     value={newJob.PK_JobID}
                     onChange={handleInputChange}
                     disabled={!!editJobPK_JobID}
-                    style={{ marginRight: '10px' }}
+                    className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
                 />
                 <input
                     type="text"
@@ -122,7 +123,9 @@ function Job() {
                     placeholder="Enter Job Title"
                     value={newJob.Title}
                     onChange={handleInputChange}
-                    style={{ marginRight: '10px' }}
+                    className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
                 />
                 <input
                     type="text"
@@ -130,7 +133,9 @@ function Job() {
                     placeholder="Enter Job Description"
                     value={newJob.Description}
                     onChange={handleInputChange}
-                    style={{ marginRight: '10px' }}
+                    className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
                 />
                 <input
                     type="date"
@@ -139,7 +144,9 @@ function Job() {
                     value={newJob.createdDate}
                     onChange={handleInputChange}
                     disabled={!!editJobPK_JobID}
-                    style={{ marginRight: '10px' }}
+                    className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
                 />
 
                 <input
@@ -148,7 +155,9 @@ function Job() {
                     placeholder="Enter modified date"
                     value={newJob.modifiedDate}
                     onChange={handleInputChange}
-                    style={{ marginRight: '10px' }}
+                    className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
                 />
                 {editJobPK_JobID ? (
                     <>

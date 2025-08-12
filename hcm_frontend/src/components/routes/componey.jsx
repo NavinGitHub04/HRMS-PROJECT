@@ -98,7 +98,7 @@ function Componey() {
 
   return (
     <>
-      <div style={{ margin: '20px' }}>
+      <div className='m-4'>
         <h3>{editCompanyId ? 'Edit Company' : 'Add New Company'}</h3>
         <input
           type="text"
@@ -107,7 +107,9 @@ function Componey() {
           value={newCompany.ID}
           onChange={handleInputChange}
           disabled={!!editCompanyId}
-          style={{ marginRight: '10px' }}
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
         <input
           type="text"
@@ -115,7 +117,10 @@ function Componey() {
           placeholder="Enter Company Name"
           value={newCompany.Name}
           onChange={handleInputChange}
-          style={{ marginRight: '10px' }}
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
         <input
           type="text"
@@ -123,7 +128,9 @@ function Componey() {
           placeholder="Enter Address"
           value={newCompany.Address}
           onChange={handleInputChange}
-          style={{ marginRight: '10px' }}
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
         <input
           type="text"
@@ -131,12 +138,14 @@ function Componey() {
           placeholder="Enter Currency"
           value={newCompany.Currency}
           onChange={handleInputChange}
-          style={{ marginRight: '10px' }}
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+           border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
+           focus:ring-blue-400 transition duration-200'
         />
         {editCompanyId ? (
           <>
-            <button onClick={updateCompany} style={{ marginRight: '10px' }}
-              className='bg-slate-500 hover:bg-slate-400 text-white font-semibold 
+            <button onClick={updateCompany}
+              className='mr-2 bg-slate-500 hover:bg-slate-400 text-white font-semibold 
             pr-2 py-2 px-2 rounded shadow-md'>
               Update Company
             </button>

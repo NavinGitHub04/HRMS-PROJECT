@@ -80,7 +80,7 @@ CREATE TABLE hcm_configuration.hr_orgunit (
 
 CREATE TABLE hcm_configuration.hr_job (
     PK_JobID INT NOT NULL,
-    Title VARCHAR(100) NOT NULL,00000000000
+    Title VARCHAR(100) NOT NULL,
     Description VARCHAR(255) NULL,
     CreatedDate DATETIME NOT NULL,
     ModifiedDate DATETIME NOT NULL,

@@ -12,7 +12,7 @@ export default function Header() {
                     <NavLink
                         to="/componey"
                         className={({ isActive }) =>
-                            `hover:bg-gray-50 lg:hover:bg-transparent 
+                            `hover: lg:hover:bg-transparent 
                         ${isActive ? "text-orange-700" : "text-gray-600"}
                          lg:border-0 hover:text-orange-700 lg:p-0`
                         }
@@ -24,7 +24,7 @@ export default function Header() {
                     <NavLink
                         to="/department"
                         className={({ isActive }) =>
-                            `hover:bg-gray-50 lg:hover:bg-transparent 
+                            `hover: lg:hover:bg-transparent 
                              ${isActive ? "text-orange-700" : "text-gray-600"}
                              lg:border-0 hover:text-orange-700 lg:p-0`
                         }
@@ -32,11 +32,11 @@ export default function Header() {
                         department
                     </NavLink>
                 </li>
-                 <li>
+                <li>
                     <NavLink
                         to="/division"
                         className={({ isActive }) =>
-                            `hover:bg-gray-50 lg:hover:bg-transparent 
+                            `hover: lg:hover:bg-transparent 
                              ${isActive ? "text-orange-700" : "text-gray-600"}
                              lg:border-0 hover:text-orange-700 lg:p-0`
                         }
@@ -44,11 +44,11 @@ export default function Header() {
                         division
                     </NavLink>
                 </li>
-                 <li>
+                <li>
                     <NavLink
                         to="/subDivision"
                         className={({ isActive }) =>
-                            `hover:bg-gray-50 lg:hover:bg-transparent 
+                            `hover: lg:hover:bg-transparent 
                              ${isActive ? "text-orange-700" : "text-gray-600"}
                              lg:border-0 hover:text-orange-700 lg:p-0`
                         }
@@ -56,11 +56,11 @@ export default function Header() {
                         subDivision
                     </NavLink>
                 </li>
-                 <li>
+                <li>
                     <NavLink
                         to="/employ"
                         className={({ isActive }) =>
-                            `hover:bg-gray-50 lg:hover:bg-transparent 
+                            `hover: lg:hover:bg-transparent 
                              ${isActive ? "text-orange-700" : "text-gray-600"}
                              lg:border-0 hover:text-orange-700 lg:p-0`
                         }
@@ -68,11 +68,11 @@ export default function Header() {
                         Employ
                     </NavLink>
                 </li>
-                 <li>
+                <li>
                     <NavLink
                         to="/subEmploy"
                         className={({ isActive }) =>
-                            `hover:bg-gray-50 lg:hover:bg-transparent 
+                            `hover:lg:hover:bg-transparent 
                              ${isActive ? "text-orange-700" : "text-gray-600"}
                              lg:border-0 hover:text-orange-700 lg:p-0`
                         }
@@ -84,8 +84,8 @@ export default function Header() {
                     <NavLink
                         to="/job"
                         className={({ isActive }) =>
-                            `hover:bg-gray-50 lg:hover:bg-transparent 
-                             ${isActive ? "text-orange-700" : "text-gray-600"}
+                            `hover:lg:hover:bg-transparent 
+                             ${isActive ? "text-orange-700 " : "text-gray-600"}
                              lg:border-0 hover:text-orange-700 lg:p-0`
                         }
                     >

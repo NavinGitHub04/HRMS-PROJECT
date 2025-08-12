@@ -42,12 +42,12 @@ function Employ() {
 
   const handleInputChange = (e) => {
     setNewEmploy({
-      ...newEmploy ,
+      ...newEmploy,
       [e.target.name]: e.target.value
     });
   };
 
-  const startEditEmploy  = (Employ ) => {
+  const startEditEmploy = (Employ) => {
     setEditEmployId(Employ.PK_CatID);
     setNewEmploy({
       id: Employ.PK_CatID?.toString() || '',
@@ -67,7 +67,7 @@ function Employ() {
         name: newEmploy.name,
         code: newEmploy.code,
       });
-      setNewEmploy({ id: '', name: '', code: ''});
+      setNewEmploy({ id: '', name: '', code: '' });
       fetchEmploy();
     } catch (error) {
       console.error('Error adding Employ:', error.response?.data || error.message);
@@ -85,7 +85,7 @@ function Employ() {
         name: newEmploy.name,
         code: newEmploy.code,
       });
-      setNewEmploy({ id: '', name: '', code: ''});
+      setNewEmploy({ id: '', name: '', code: '' });
       setEditEmployId(null);
       fetchEmploy();
     } catch (error) {
@@ -135,7 +135,7 @@ function Employ() {
             <button
               onClick={() => {
                 setEditEmployId(null);
-                setNewEmploy({ id: '', name: '', code: ''});
+                setNewEmploy({ id: '', name: '', code: '' });
               }}
               className='bg-slate-500 hover:bg-slate-400 text-white font-semibold 
               pr-2 py-2 px-2 rounded shadow-md'

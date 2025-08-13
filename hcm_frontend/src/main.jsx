@@ -10,7 +10,8 @@ import SubDivision from './components/routes/subdivision.jsx';
 import Employ from './components/routes/employ.jsx';
 import SubEmploy from './components/routes/subemploy.jsx';
 import Job from './components/routes/job.jsx';
-import OrgUnit from './components/routes/0rgUnit.jsx'; // Fixed import path for OrgUnit component
+import OrgUnit from './components/routes/0rgUnit.jsx';
+import Position from './components/routes/position.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -47,7 +48,12 @@ const router = createBrowserRouter([
       {
         path: 'OrgUnit',
         element: <OrgUnit />,
+      },
+      {
+        path: 'Position',
+        element: <Position />,
       }
+
     ],
   },
 ]);

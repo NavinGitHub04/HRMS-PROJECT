@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+
+function formatDateForMySQL(dateString) {
+    if (!dateString) return null;
+    const date = new Date(dateString);
+    const pad = (n) => n.toString().padStart(2, '0');
+    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} 
+    ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
+}
+
 function Job() {
     const [product, setProduct] = useState([]);
     const [error, setError] = useState(false);
@@ -55,6 +64,8 @@ function Job() {
             PK_JobID: job.PK_JobID?.toString() || '',
             Title: job.Title || '',
             Description: job.Description || '',
+            createdDate: job.CreatedDate ? job.CreatedDate.slice(0, 10) : '',
+            modifiedDate: job.ModifiedDate ? job.ModifiedDate.slice(0, 10) : '',
         });
     };
 
@@ -68,11 +79,11 @@ function Job() {
                 id: Number(newJob.PK_JobID),
                 title: newJob.Title,
                 description: newJob.Description,
-                createdDate: newJob.createdDate,
-                modifiedDate: newJob.modifiedDate,
+                createdDate: formatDateForMySQL(newJob.createdDate),
+                modifiedDate: formatDateForMySQL(newJob.modifiedDate),
             });
-            setNewJob({ PK_JobID: '', Title: '', Description: '' });
-            console.log(setNewJob({ PK_JobID: '', Title: '', Description: '' }));
+            setNewJob({ PK_JobID: '', Title: '', Description: '', createdDate: '', modifiedDate: '' });
+            setEditJobPK_JobID(null);
             fetchJob();
         } catch (error) {
             console.error('Error adding Job:', error.response?.data || error.message);
@@ -89,9 +100,9 @@ function Job() {
                 id: Number(newJob.PK_JobID),
                 title: newJob.Title,
                 description: newJob.Description,
-                modifiedDate: newJob.modifiedDate,
+                modifiedDate: formatDateForMySQL(newJob.modifiedDate),
             });
-            setNewJob({ PK_JobID: '', Title: '', Description: '' });
+            setNewJob({ PK_JobID: '', Title: '', Description: '', createdDate: '', modifiedDate: '' });
             setEditJobPK_JobID(null);
             fetchJob();
         } catch (error) {
@@ -129,7 +140,7 @@ function Job() {
                 />
                 <input
                     type="text"
-                    name="description"
+                    name="Description"
                     placeholder="Enter Job Description"
                     value={newJob.Description}
                     onChange={handleInputChange}
@@ -171,7 +182,7 @@ function Job() {
                         <button
                             onClick={() => {
                                 setEditJobPK_JobID(null);
-                                setNewJob({ PK_JobID: '', Title: '', Description: '' });
+                                setNewJob({ PK_JobID: '', Title: '', Description: '', createdDate: '', modifiedDate: '' });
                             }}
                             className="bg-slate-500 hover:bg-slate-400 text-white font-semibold pr-2 py-2 px-2 rounded shadow-md"
                         >
@@ -236,4 +247,3 @@ function Job() {
 }
 
 export default Job;
-

@@ -104,6 +104,18 @@ export default function Header() {
                         OrgUnit
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink
+                        to="/Position"
+                        className={({ isActive }) =>
+                            `hover:lg:hover:bg-transparent 
+                             ${isActive ? "text-orange-700 " : "text-gray-600"}
+                             lg:border-0 hover:text-orange-700 lg:p-0`
+                        }
+                    >
+                        Position
+                    </NavLink>
+                </li>
             </ul>
         </div>
     );

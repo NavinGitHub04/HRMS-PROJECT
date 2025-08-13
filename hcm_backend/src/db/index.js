@@ -14,7 +14,7 @@ const connection = db.createConnection({
 })
 
 const connectDB = async () => {
-  await connection.connect((error) => {
+  connection.connect((error) => {
     if (error) {
       console.log(`database connection error: ${error}`)
       return;

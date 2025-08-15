@@ -98,7 +98,7 @@ function Employ() {
 
   return (
     <>
-      <div style={{ margin: '20px' }}>
+      <div className='m-20'>
         <h3>{editEmployId ? 'Edit Employ' : 'Add New Employ'}</h3>
         <input
           type="text"
@@ -107,8 +107,8 @@ function Employ() {
           value={newEmploy.id}
           onChange={handleInputChange}
           disabled={!!editEmployId}
-          // className="mr-10 pl-2 bg-transparent  rounded-lg  border-0 focus:outline-none focus:border-0 border-r-4"
-          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
            border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
            focus:ring-blue-400 transition duration-200'
         />
@@ -118,7 +118,8 @@ function Employ() {
           placeholder="Enter Employ Name"
           value={newEmploy.name}
           onChange={handleInputChange}
-          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
            border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
            focus:ring-blue-400 transition duration-200'
         />
@@ -128,7 +129,8 @@ function Employ() {
           placeholder="Enter Code"
           value={newEmploy.code}
           onChange={handleInputChange}
-          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
            border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
            focus:ring-blue-400 transition duration-200'
         />
@@ -157,8 +159,8 @@ function Employ() {
         )}
       </div>
 
-      <table border="1" cellPadding="10" style={{ borderCollapse: 'collapse', width: '100%' }}>
-        <thead style={{ textAlign: 'left' }}>
+      <table border="1" cellPadding="10" className="border border-collapse w-full">
+        <thead className='text-left'>
           <tr>
             <th colSpan="3">Employ List: {product.length}</th>
           </tr>
@@ -175,11 +177,13 @@ function Employ() {
               <td>{Employ.Name}</td>
               <td>{Employ.Code}</td>
               <td>
-                <button onClick={() => startEditEmploy(Employ)} className='bg-slate-500 hover:bg-slate-400 text-white font-semibold 
+                <button onClick={() => startEditEmploy(Employ)}
+                  className='bg-slate-500 hover:bg-slate-400 text-white font-semibold 
                 pr-2 py-2 px-2 rounded shadow-md'>Edit</button>
               </td>
               <td>
-                <button onClick={() => deleteEmploy(Employ.PK_CatID)} className='bg-slate-500 hover:bg-slate-400 text-white font-semibold 
+                <button onClick={() => deleteEmploy(Employ.PK_CatID)}
+                  className='bg-slate-500 hover:bg-slate-400 text-white font-semibold 
                 pr-2 py-2 px-2 rounded shadow-md'>Delete</button>
               </td>
             </tr>

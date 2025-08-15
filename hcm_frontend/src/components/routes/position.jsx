@@ -13,6 +13,13 @@ function Position() {
         CreatedDate: '',
         ModifiedDate: '',
     });
+    function formatDateForMySQL(dateString) {
+        if (!dateString) return null;
+        const date = new Date(dateString);
+        const pad = (n) => n.toString().padStart(2, '0');
+        return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
+    }
+
     const [editPositionId, setEditPositionId] = useState(null);
 
     useEffect(() => {
@@ -51,12 +58,12 @@ function Position() {
     const startEditPosition = (Position) => {
         setEditPositionId(Position.PK_PositionID);
         setNewPosition({
-            id: Position.PK_PositionID,
-            jobId: Position.FK_HR_JobID,
-            orgUnitId: Position.FK_HR_OrgUnitID,
-            title: Position.Title,
-            createdDate: Position.CreatedDate,
-            modifiedDate: Position.ModifiedDate,
+            PK_PositionID: Position.PK_PositionID,
+            FK_HR_JobID: Position.FK_HR_JobID,
+            FK_HR_OrgUnitID: Position.FK_HR_OrgUnitID,
+            Title: Position.Title,
+            CreatedDate: Position.CreatedDate ? Position.CreatedDate.slice(0, 10) : '',
+            ModifiedDate: Position.ModifiedDate ? Position.ModifiedDate.slice(0, 10) : '',
 
         });
     };
@@ -72,8 +79,8 @@ function Position() {
                 jobId: Number(newPosition.FK_HR_JobID),
                 orgUnitId: Number(newPosition.FK_HR_OrgUnitID),
                 title: newPosition.Title,
-                createdDate: new Date().toISOString(),
-                modifiedDate: new Date().toISOString(),
+                createdDate: formatDateForMySQL(newPosition.CreatedDate) || formatDateForMySQL(new Date()),
+                modifiedDate: formatDateForMySQL(newPosition.ModifiedDate) || formatDateForMySQL(new Date()),
             });
             setNewPosition({ id: '', jobId: '', orgUnitId: '', title: '', createdDate: '', modifiedDate: '' });
             fetchPosition();
@@ -90,11 +97,11 @@ function Position() {
         try {
             await axios.post('api/v1/position/update', {
                 id: Number(newPosition.PK_PositionID),
-                jobId: Number(newPosition.FK_HR_OrgUnitID),
-                orgUnitId: Number(newPosition.FK_HR_JobID),
+                jobId: Number(newPosition.FK_HR_JobID),
+                orgUnitId: Number(newPosition.FK_HR_OrgUnitID),
                 title: newPosition.Title,
-                createdDate: newPosition.CreatedDate,
-                modifiedDate: new Date().toISOString(),
+                modifiedDate: formatDateForMySQL(newPosition.ModifiedDate) || formatDateForMySQL(new Date()),
+
             });
             setNewPosition({ id: '', jobId: '', orgUnitId: '', title: '', createdDate: '', modifiedDate: '' });
             setEditPositionId(null);
@@ -124,9 +131,9 @@ function Position() {
                 />
                 <input
                     type="text"
-                    name="FK_HR_OrgUnitID"
+                    name="FK_HR_JobID"
                     placeholder="Enter Position FK_HR_OrgUnitID"
-                    value={newPosition.FK_HR_OrgUnitID}
+                    value={newPosition.FK_HR_JobID}
                     onChange={handleInputChange}
                     className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
            border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
@@ -134,9 +141,9 @@ function Position() {
                 />
                 <input
                     type="text"
-                    name="FK_HR_JobID"
+                    name="FK_HR_OrgUnitID"
                     placeholder="Enter Company ID"
-                    value={newPosition.FK_HR_JobID}
+                    value={newPosition.FK_HR_OrgUnitID}
                     onChange={handleInputChange}
                     className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
            border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
@@ -202,7 +209,7 @@ function Position() {
                 )}
             </div>
 
-            <table border="1" cellPadding="10" style={{ borderCollapse: 'collapse', width: '100%' }}>
+            <table border="1" cellPadding="10" className="border border-collapse w-full">
                 <thead className='text-left'>
                     <tr>
                         <th colSpan="5">Position List: {product.length}</th>

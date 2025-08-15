@@ -105,7 +105,8 @@ function Division() {
           value={newDivision.PK_DivID}
           onChange={handleInputChange}
           disabled={!!editDivisionId}
-          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
            border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
            focus:ring-blue-400 transition duration-200'
         />
@@ -115,7 +116,8 @@ function Division() {
           placeholder="Enter Division Name"
           value={newDivision.Name}
           onChange={handleInputChange}
-          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
            border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
            focus:ring-blue-400 transition duration-200'
         />
@@ -125,7 +127,8 @@ function Division() {
           placeholder="Enter Company ID"
           value={newDivision.FK_HR_CompanyID}
           onChange={handleInputChange}
-          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
            border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
            focus:ring-blue-400 transition duration-200'
         />
@@ -133,7 +136,8 @@ function Division() {
           <>
             <button
               onClick={updateDivision}
-              className="mr-2 bg-slate-500 hover:bg-slate-400 text-white font-semibold pr-2 py-2 px-2 rounded shadow-md"
+              className="mr-2 bg-slate-500 hover:bg-slate-400 text-white font-semibold 
+              pr-2 py-2 px-2 rounded shadow-md"
             >
               Update Division
             </button>
@@ -142,7 +146,8 @@ function Division() {
                 setEditDivisionId(null);
                 setNewDivision({ PK_DivID: '', FK_HR_CompanyID: '', Name: '' });
               }}
-              className="bg-slate-500 hover:bg-slate-400 text-white font-semibold pr-2 py-2 px-2 rounded shadow-md"
+              className="bg-slate-500 hover:bg-slate-400 text-white font-semibold 
+              pr-2 py-2 px-2 rounded shadow-md"
             >
               Cancel
             </button>
@@ -150,15 +155,16 @@ function Division() {
         ) : (
           <button
             onClick={addDivision}
-            className="bg-slate-500 hover:bg-slate-400 text-white font-semibold pr-2 py-2 px-2 rounded shadow-md"
+            className="bg-slate-500 hover:bg-slate-400 text-white font-semibold pr-2
+             py-2 px-2 rounded shadow-md"
           >
             Add Division
           </button>
         )}
       </div>
 
-      <table border="1" cellPadding="10" style={{ borderCollapse: 'collapse', width: '100%' }}>
-        <thead style={{ textAlign: 'left' }}>
+      <table border="1" cellPadding="10" className="border border-collapse w-full">
+        <thead className='text-left'>
           <tr>
             <th colSpan="5">Division List: {product.length}</th>
           </tr>
@@ -179,7 +185,8 @@ function Division() {
               <td>
                 <button
                   onClick={() => startEditDivision(division)}
-                  className="bg-slate-500 hover:bg-slate-400 text-white font-semibold pr-2 py-2 px-2 rounded shadow-md"
+                  className="bg-slate-500 hover:bg-slate-400 text-white font-semibold 
+                  pr-2 py-2 px-2 rounded shadow-md"
                 >
                   Edit
                 </button>
@@ -187,7 +194,8 @@ function Division() {
               <td>
                 <button
                   onClick={() => deleteDivision(division.PK_DivID)}
-                  className="bg-slate-500 hover:bg-slate-400 text-white font-semibold pr-2 py-2 px-2 rounded shadow-md"
+                  className="bg-slate-500 hover:bg-slate-400 text-white font-semibold 
+                  pr-2 py-2 px-2 rounded shadow-md"
                 >
                   Delete
                 </button>

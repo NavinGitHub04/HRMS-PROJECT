@@ -107,7 +107,8 @@ function Componey() {
           value={newCompany.ID}
           onChange={handleInputChange}
           disabled={!!editCompanyId}
-          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
            border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
            focus:ring-blue-400 transition duration-200'
         />
@@ -128,7 +129,8 @@ function Componey() {
           placeholder="Enter Address"
           value={newCompany.Address}
           onChange={handleInputChange}
-          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
            border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
            focus:ring-blue-400 transition duration-200'
         />
@@ -138,7 +140,8 @@ function Componey() {
           placeholder="Enter Currency"
           value={newCompany.Currency}
           onChange={handleInputChange}
-          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
            border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
            focus:ring-blue-400 transition duration-200'
         />
@@ -155,7 +158,8 @@ function Componey() {
                 setNewCompany({ ID: '', Name: '', Address: '', Currency: '' });
 
               }}
-              className='bg-slate-500 hover:bg-slate-400 text-white font-semibold pr-2 py-2 px-2 rounded shadow-md'
+              className='bg-slate-500 hover:bg-slate-400 text-white font-semibold 
+              pr-2 py-2 px-2 rounded shadow-md'
 
             >
               Cancel
@@ -168,8 +172,8 @@ function Componey() {
         )}
       </div>
 
-      <table border="1" cellPadding="10" style={{ borderCollapse: 'collapse', width: '100%' }}>
-        <thead style={{ textAlign: 'left' }}>
+      <table border="1" cellPadding="10" className="border border-collapse w-full">
+        <thead className='aline-left'>
           <tr>
             <th colSpan="6">Company List: {product.length}</th>
           </tr>

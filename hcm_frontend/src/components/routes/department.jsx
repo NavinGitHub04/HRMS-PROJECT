@@ -110,7 +110,8 @@ function Department() {
           value={newDepartment.id}
           onChange={handleInputChange}
           disabled={!!editDepartmentId}
-          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
            border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
            focus:ring-blue-400 transition duration-200'
         />
@@ -120,7 +121,8 @@ function Department() {
           placeholder="Enter Department Name"
           value={newDepartment.name}
           onChange={handleInputChange}
-          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
            border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
            focus:ring-blue-400 transition duration-200'
         />
@@ -130,7 +132,8 @@ function Department() {
           placeholder="Enter Code"
           value={newDepartment.code}
           onChange={handleInputChange}
-          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
            border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
            focus:ring-blue-400 transition duration-200'
         />
@@ -140,7 +143,8 @@ function Department() {
           placeholder="Enter Parent DeptId"
           value={newDepartment.deptId}
           onChange={handleInputChange}
-          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400 bg-white bg-opacity-70 border-none border-r-4
+          className=' pl-4 pr-4 py-2 text-gray-800 placeholder-gray-400
+           bg-white bg-opacity-70 border-none border-r-4
            border-blue-500 rounded-md shadow-md focus:outline-none focus:ring-2 
            focus:ring-blue-400 transition duration-200'
         />
@@ -169,8 +173,8 @@ function Department() {
         )}
       </div>
 
-      <table border="1" cellPadding="10" style={{ borderCollapse: 'collapse', width: '100%' }}>
-        <thead style={{ textAlign: 'left' }}>
+      <table border="1" cellPadding="10" className="border border-collapse w-full">
+        <thead className='text-left'>
           <tr>
             <th colSpan="6">Department List: {product.length}</th>
           </tr>
@@ -191,11 +195,13 @@ function Department() {
               <td>{dept.Code}</td>
               <td>{dept.FK_HR_DeptID}</td>
               <td>
-                <button onClick={() => startEditDepartment(dept)} className='bg-slate-500 hover:bg-slate-400 text-white font-semibold 
+                <button onClick={() => startEditDepartment(dept)} className='bg-slate-500
+                 hover:bg-slate-400 text-white font-semibold 
                 pr-2 py-2 px-2 rounded shadow-md'>Edit</button>
               </td>
               <td>
-                <button onClick={() => deleteDepartment(dept.PK_DeptID)} className='bg-slate-500 hover:bg-slate-400 text-white font-semibold 
+                <button onClick={() => deleteDepartment(dept.PK_DeptID)} className='bg-slate-500
+                 hover:bg-slate-400 text-white font-semibold 
                 pr-2 py-2 px-2 rounded shadow-md'>Delete</button>
               </td>
             </tr>

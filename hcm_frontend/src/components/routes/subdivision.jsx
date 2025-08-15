@@ -161,7 +161,7 @@ function SubDivision() {
         )}
       </div>
 
-      <table border="1" cellPadding="10" style={{ borderCollapse: 'collapse', width: '100%' }}>
+      <table border="1" cellPadding="10" className="border border-collapse w-full">
         <thead className='text-left'>
           <tr>
             <th colSpan="5">subDivision List: {product.length}</th>
